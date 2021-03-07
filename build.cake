@@ -3,19 +3,17 @@ var target = Argument<string>("target", "build");
 Task("Cake Colors Demo")
     .Does(() =>
 {
-    System.Threading.Thread.Sleep(2000);
+    Console.Out.WriteLine("\u001b[44;1mHello from {0}! This is written to stdout (1).\u001b[0m", "Cake");
+    Console.Error.WriteLine("\u001b[41mHello from {0}! This is written to stderr (1).\u001b[0m", "Cake");
 
-    Verbose("Hello from {0}! This is a Verbose message.", "Cake");
-    System.Threading.Thread.Sleep(2000);
+    Console.Out.WriteLine("\u001b[44;1mHello from {0}! This is written to stdout (2).\u001b[0m", "Cake");
+    Console.Error.WriteLine("\u001b[41mHello from {0}! This is written to stderr (2).\u001b[0m", "Cake");
 
-    Information("Hello from {0}! This is an Information message.", "Cake");
-    System.Threading.Thread.Sleep(2000);
+    Console.Out.WriteLine("\u001b[44;1mHello from {0}! This is written to stdout (3).\u001b[0m", "Cake");
+    Console.Error.WriteLine("\u001b[41mHello from {0}! This is written to stderr (3).\u001b[0m", "Cake");
 
-    Warning("Hello from {0}! This is a Warning message.", "Cake");
-    System.Threading.Thread.Sleep(2000);
-
-    Error("Hello from {0}! This is an Error message.", "Cake");
-    System.Threading.Thread.Sleep(2000);
+    Console.Out.WriteLine("\u001b[44;1mHello from {0}! This is written to stdout (4).\u001b[0m", "Cake");
+    Console.Error.WriteLine("\u001b[41mHello from {0}! This is written to stderr (4).\u001b[0m", "Cake");
 });
 
 Task("clean")
